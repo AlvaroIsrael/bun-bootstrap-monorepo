@@ -6,7 +6,7 @@ import { SeedManager } from "@mikro-orm/seeder";
 export default defineConfig({
   entities: ["./dist/entities"],
   entitiesTs: ["./src/entities"],
-  dbName: "app",
+  dbName: String(process.env.APPLICATION_NAME),
   driver: PostgreSqlDriver,
   extensions: [Migrator, EntityGenerator, SeedManager],
   debug: process.env.NODE_ENV !== "production",

@@ -13,10 +13,14 @@
     "test": "bun test",
     "test:watch": "bun test --watch",
     "test:cov": "bun test --coverage",
+    "format": "bunx oxfmt apps/",
+    "lint": "bunx oxlint apps/",
     "libraryUpdate": "bun update --interactive"
   },
   "devDependencies": {
-    "@types/bun": "latest"
+    "@types/bun": "latest",
+    "oxfmt": "^0.67.0",
+    "oxlint": "^1.82.0"
   },
   "peerDependencies": {
     "typescript": "^7"
