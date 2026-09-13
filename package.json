@@ -1,0 +1,21 @@
+{
+  "name": "bun-app",
+  "type": "module",
+  "private": true,
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ],
+  "scripts": {
+    "test": "bun test",
+    "test:watch": "bun test --watch",
+    "test:cov": "bun test --coverage"
+  },
+  "devDependencies": {
+    "@types/bun": "latest"
+  },
+  "peerDependencies": {
+    "typescript": "^7"
+  },
+  "packageManager": "bun@1.4.2"
+}
