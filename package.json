@@ -1,15 +1,19 @@
 {
   "name": "bun-app",
-  "type": "module",
   "private": true,
+  "description": "🥠 A simple TypeScript monorepo boostrap for bun.",
+  "license": "Apache-2.0",
+  "author": "Alvaro Israel Nunes Leite",
   "workspaces": [
     "apps/*",
     "packages/*"
   ],
+  "type": "module",
   "scripts": {
     "test": "bun test",
     "test:watch": "bun test --watch",
-    "test:cov": "bun test --coverage"
+    "test:cov": "bun test --coverage",
+    "libraryUpdate": "bun update --interactive"
   },
   "devDependencies": {
     "@types/bun": "latest"

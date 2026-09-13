@@ -2,10 +2,14 @@
   "name": "frontend",
   "version": "0.1.0",
   "private": true,
+  "description": "A simple frontend boostrap for bun with Next.",
+  "license": "Apache-2.0",
+  "author": "Alvaro Israel Nunes Leite",
   "scripts": {
     "start:dev": "next dev",
     "build": "next build",
-    "start": "next start"
+    "start": "next start",
+    "libraryUpdate": "bun update --interactive"
   },
   "dependencies": {
     "next": "16.3.5",

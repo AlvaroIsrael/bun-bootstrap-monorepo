@@ -2,9 +2,9 @@
   "name": "backend",
   "version": "0.0.1",
   "private": true,
-  "description": "",
-  "license": "UNLICENSED",
-  "author": "",
+  "description": "A simple backend boostrap for bun with Nest and MikroORM.",
+  "license": "Apache-2.0",
+  "author": "Alvaro Israel Nunes Leite",
   "type": "module",
   "scripts": {
     "build": "nest build",
@@ -14,7 +14,8 @@
     "start:dev": "bun run nest start -b swc --watch",
     "start:debug": "bun run nest start -b swc --debug --watch",
     "start:prod": "node dist/server",
-    "lint": "oxlint src/ test/"
+    "lint": "oxlint src/ test/",
+    "libraryUpdate": "bun update --interactive"
   },
   "dependencies": {
     "@mikro-orm/core": "^7.2.0",
