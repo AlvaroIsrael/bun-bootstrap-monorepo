@@ -16,8 +16,12 @@
       "version": "0.0.1",
       "dependencies": {
         "@mikro-orm/core": "^7.2.0",
+        "@mikro-orm/decorators": "^7.2.0",
+        "@mikro-orm/entity-generator": "^7.2.0",
+        "@mikro-orm/migrations": "^7.2.0",
         "@mikro-orm/nestjs": "^7.1.0",
         "@mikro-orm/postgresql": "^7.2.0",
+        "@mikro-orm/seeder": "^7.2.0",
         "@nestjs/common": "^12.0.1",
         "@nestjs/core": "^12.0.1",
         "@nestjs/platform-fastify": "^12.0.1",
@@ -43,6 +47,7 @@
       "name": "frontend",
       "version": "0.1.0",
       "dependencies": {
+        "lucide-react": "^1.45.0",
         "next": "16.3.5",
         "react": "19.3.0",
         "react-dom": "19.3.0",
@@ -200,9 +205,17 @@
 
     "@mikro-orm/core": ["@mikro-orm/core@7.2.0", "", { "peerDependencies": { "dataloader": "2.2.3" }, "optionalPeers": ["dataloader"] }, "sha512-a4RoZXfzVJqiaOwsw2k7EH1Vv+BOdOokB+F4TofUz0mLz4XPewwaKUQIUeqRNmf0fKpOFJxlgTxsZYXhZoFxCQ=="],
 
+    "@mikro-orm/decorators": ["@mikro-orm/decorators@7.2.0", "", { "peerDependencies": { "@mikro-orm/core": "7.2.0", "reflect-metadata": "^0.1.0 || ^0.2.0" }, "optionalPeers": ["reflect-metadata"] }, "sha512-iFhSIoQmt4jFA1+4hLkSEC+cvWOuUdvUv6ljN3h7qgzeSxO3pLc0vHxkUw2QZOSezo0DjOSSzjP+j9ic+l/YFg=="],
+
+    "@mikro-orm/entity-generator": ["@mikro-orm/entity-generator@7.2.0", "", { "dependencies": { "@mikro-orm/sql": "7.2.0" }, "peerDependencies": { "@mikro-orm/core": "7.2.0" } }, "sha512-fj/0Ll2tirGLsdxR2f9FOWuGWClJ2rgBC3Sk0M5f/66TJE0lE1dwkL4m2GW92jozlSEULBTQhYsaNW64KU21dw=="],
+
+    "@mikro-orm/migrations": ["@mikro-orm/migrations@7.2.0", "", { "dependencies": { "@mikro-orm/sql": "7.2.0" }, "peerDependencies": { "@mikro-orm/core": "7.2.0" } }, "sha512-C0lhvyreASOf8GelzdqCuXHo3pjg6cPDUJAFggT8kKkCNgA4x34bXQVUWOWw/Vqwpu0BuWTsMEveX/Ln3cQCmw=="],
+
     "@mikro-orm/nestjs": ["@mikro-orm/nestjs@7.1.0", "", { "peerDependencies": { "@mikro-orm/core": "^7.0.0 || ^7.0.0-dev.0", "@nestjs/common": "^11.0.5 || ^12.0.0", "@nestjs/core": "^11.0.5 || ^12.0.0", "reflect-metadata": "^0.1.0 || ^0.2.0" } }, "sha512-S7UXOR4jYtl+lSl23GxQNoWaI3naf5WGUaWMjqZ1o+xcp+fha8une9Yu3qEizZNA+iulE4qA+yaB6sKnA67fbw=="],
 
     "@mikro-orm/postgresql": ["@mikro-orm/postgresql@7.2.0", "", { "dependencies": { "@mikro-orm/sql": "7.2.0", "kysely": "0.29.5", "pg": "8.23.0", "pg-cursor": "2.22.0", "postgres-array": "3.0.4", "postgres-date": "2.1.0", "postgres-interval": "4.1.0" }, "peerDependencies": { "@mikro-orm/core": "7.2.0" } }, "sha512-15M7ntKtiND22YAGYOzvKXtHJ8lm0ukRW+TaHjk9m/HFop4fXyHzqWC91cTb+kdcE+RzeLqOqbkmcIzFOC5BkA=="],
+
+    "@mikro-orm/seeder": ["@mikro-orm/seeder@7.2.0", "", { "peerDependencies": { "@mikro-orm/core": "7.2.0" } }, "sha512-un1FaXAcnN2VRN3Hs87KxAgssSdxbLl1VG+vrRMo4gaPPUJOVk4w1CvqViggKgIkuGnrOoyMbmTKkVe2Ndz/aQ=="],
 
     "@mikro-orm/sql": ["@mikro-orm/sql@7.2.0", "", { "dependencies": { "kysely": "0.29.5" }, "peerDependencies": { "@mikro-orm/core": "7.2.0" } }, "sha512-ZpuCfBL6XAYrJsUglvXrah+erB9gVgkoSuIKR/x+o1o/OVOE8ljgRxYIIIMGE+LetR9s1wrDQjrwfm0gghqsiA=="],
 
@@ -759,6 +772,8 @@
     "log-symbols": ["log-symbols@7.0.1", "", { "dependencies": { "is-unicode-supported": "^2.0.0", "yoctocolors": "^2.1.1" } }, "sha512-ja1E3yCr9i/0hmBVaM0bfwDjnGy8I/s6PP4DFp+yP+a+mrHO4Rm7DtmnqROTUkHIkqffC84YY7AeqX6oFk0WFg=="],
 
     "lowercase-keys": ["lowercase-keys@3.0.0", "", {}, "sha512-ozCC6gdQ+glXOQsveKD0YsDy8DSQFjDTz4zyzEHNV5+JP5D62LmfDZ6o1cycFx9ouG940M5dE8C8CTewdj2YWQ=="],
+
+    "lucide-react": ["lucide-react@1.45.0", "", { "peerDependencies": { "react": "^16.5.1 || ^17.0.0 || ^18.0.0 || ^19.0.0" } }, "sha512-yH1ubCAduho9UR7oJhRXIQXogksRILBiTuZC4/bQIGeB9JOkxMlSuEHyyZpo1Z3S0yWJO2KTSUZbjiNvVxeOUw=="],
 
     "magic-string": ["magic-string@1.0.0", "", { "dependencies": { "@jridgewell/sourcemap-codec": "^1.5.5" } }, "sha512-CGvjzMN08iv6w1mm4/x3Gh1hLb4VnyRUA15FFpl6CsCIGGoe36k7kY5KNz9QDbSBN5I/fWHM6ZlIkUTa5xdUEA=="],
 
