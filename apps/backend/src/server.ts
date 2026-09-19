@@ -1,9 +1,11 @@
 import { ConsoleLogger, Logger, ValidationPipe, VersioningType } from "@nestjs/common";
 import { ConfigService } from "@nestjs/config";
 import { HttpAdapterHost, NestFactory } from "@nestjs/core";
+import { type MicroserviceOptions } from "@nestjs/microservices";
 import { FastifyAdapter, NestFastifyApplication } from "@nestjs/platform-fastify";
 import { DocumentBuilder, SwaggerModule } from "@nestjs/swagger";
 import { AuditContextInterceptor } from "./@shared/interceptors/audit-context.interceptor.js";
+import { getRedisOptions } from "./@shared/redis/redis.options.js";
 import { AppModule } from "./modules/app/app.module.js";
 
 const logger = new Logger("Bootstrap");
@@ -39,6 +41,10 @@ const startServer = async () => {
     preflightContinue: true,
     methods: ["GET", "POST", "PUT", "DELETE", "PATCH", "OPTIONS", "HEAD"],
   });
+
+  app.connectMicroservice<MicroserviceOptions>(getRedisOptions(configService));
+
+  await app.startAllMicroservices();
 
   const applicationName = String(configService.get<string>("APPLICATION_NAME")).toLowerCase();
 
