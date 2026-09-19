@@ -8,6 +8,9 @@ export default defineConfig({
   entitiesTs: ["./src/entities"],
   dbName: String(process.env.APPLICATION_NAME),
   driver: PostgreSqlDriver,
+  discovery: {
+    warnWhenNoEntities: false,
+  },
   extensions: [Migrator, EntityGenerator, SeedManager],
   debug: process.env.NODE_ENV !== "production",
   slowQueryThreshold: process.env.NODE_ENV !== "production" ? 200 : undefined,

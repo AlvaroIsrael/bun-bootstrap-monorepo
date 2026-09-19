@@ -4,7 +4,9 @@ import { HttpAdapterHost, NestFactory } from "@nestjs/core";
 import { FastifyAdapter, NestFastifyApplication } from "@nestjs/platform-fastify";
 import { DocumentBuilder, SwaggerModule } from "@nestjs/swagger";
 import { AuditContextInterceptor } from "./@shared/interceptors/audit-context.interceptor.js";
-import { AppModule } from "./app/app.module.js";
+import { AppModule } from "./modules/app/app.module.js";
+
+const logger = new Logger("Bootstrap");
 
 const startServer = async () => {
   const app = await NestFactory.create<NestFastifyApplication>(
@@ -61,11 +63,11 @@ const startServer = async () => {
   await app.listen(Number(configService.get("BACKEND_PORT")), "0.0.0.0");
 };
 
-try {
-  void startServer();
-  const logger = new Logger("Bootstrap");
-  logger.log(`🔥 Server running on port ${String(process.env.BACKEND_PORT)} 🔥`);
-} catch (error) {
-  console.error(error);
-  process.exit(1);
-}
+startServer()
+  .then(() => {
+    logger.log(`🔥 Server running on port ${String(process.env.BACKEND_PORT)} 🔥`);
+  })
+  .catch((error) => {
+    logger.error("❌ Failed to start server:", error);
+    process.exit(1);
+  });
