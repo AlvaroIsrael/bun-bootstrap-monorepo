@@ -7,6 +7,7 @@ import { DocumentBuilder, SwaggerModule } from "@nestjs/swagger";
 import { AuditContextInterceptor } from "./@shared/interceptors/audit-context.interceptor.js";
 import { getRedisOptions } from "./@shared/redis/redis.options.js";
 import { AppModule } from "./modules/app/app.module.js";
+import { GlobalExceptionFilter } from "./@shared/filters/global-exception.filter.js";
 
 const logger = new Logger("Bootstrap");
 

@@ -217,3 +217,17 @@ Ao receber uma solicitação de implementação no NestJS:
 7. Escreva testes focados no comportamento observável de cada caso de uso.
 
 Em caso de dúvida, escolha a menor divisão que preserve uma operação de negócio clara, independente e testável. Não adicione métodos públicos redundantes nem abstrações sem responsabilidade própria.
+
+## Instruções Específicas de Teste
+
+- **Idioma**: Sempre escreva os testes em inglês.
+- **Gerenciador de Pacotes**: Use `bun` se precisar executar os testes.
+- **Comando de Teste**: O script correto para executar os testes é `bun test`.
+- **Framework**: O projeto foi construído com **bun** e usa **Playwright** como framework de testes de UI.
+- **Fluxo de Trabalho**: Ao criar um arquivo de teste, escreva primeiro os testes para os cenários de falha. Somente após cobri-los, gere o(s) teste(s) para os casos de sucesso do serviço.
+- **Tipagem**: Evite gerar testes sem tipagem ou usar o tipo `any`. Seja sempre rigoroso com as tipagens.
+- **Linting**: Resolva os erros de linter nos arquivos de teste gerados da forma mais eficaz possível.
+- **Dependências**: Use *mocks* para dependências externas sempre que possível.
+- **Escopo**: Não teste entidades "anêmicas". Foque em testar a lógica de negócios, serviços, casos de uso e arquivos do tipo `.utils.ts`.
+- **Localização do Arquivo**: Os arquivos de teste devem ser salvos em um diretório `__tests__` localizado na mesma pasta do arquivo que está sendo testado.
+- **Convenção de Nomenclatura**: O nome do arquivo de teste deve corresponder ao nome do serviço ou caso de uso, seguido pelo sufixo `.spec.ts`. Por exemplo, se estiver testando `create-user.service.ts`, o arquivo de teste deve ser nomeado `create-user.service.spec.ts`.
