@@ -1,9 +1,134 @@
 {
-  "$schema": "https://raw.githubusercontent.com/oxc-project/oxc/main/crates/oxc_linter/src/rules.rs",
+  "$schema": "./node_modules/oxlint/configuration_schema.json",
+  "plugins": [
+    "react",
+    "unicorn",
+    "typescript",
+    "import",
+    "nextjs",
+    "oxc"
+  ],
+  "categories": {},
   "rules": {
-    "@typescript-eslint/no-floating-promises": "warn"
+    "no-unused-vars": [
+      "warn",
+      {
+        "argsIgnorePatter": "^_",
+        "varsIgnorePatter": "^_",
+        "caughtErrorsIgnorePattern": "^_"
+      }
+    ],
+    "typescript/no-deprecated": "warn",
+    "no-console": "off",
+    "no-debugger": "warn",
+    "no-undef": "error",
+    "eqeqeq": [
+      "warn",
+      "always",
+      {
+        "null": "ignore"
+      }
+    ],
+    "no-var": "error",
+    "prefer-const": "warn",
+    "no-empty": "warn",
+    "no-unreachable": "error",
+    "no-constant-condition": "warn",
+    "no-duplicate-case": "error",
+    "no-fallthrough": "warn",
+    "no-self-assign": "error",
+    "no-self-compare": "error",
+    "no-unsafe-finally": "error",
+    "no-unsafe-negation": "error",
+    "no-useless-catch": "error",
+    "no-with": "error",
+    "require-yield": "error",
+    "use-isnan": "error",
+    "valid-typeof": "error",
+    "typescript/no-explicit-any": "off",
+    "typescript/ban-ts-comment": "off",
+    "typescript/explicit-function-return-type": "off",
+    "typescript/explicit-module-boundary-types": "off",
+    "typescript/no-unused-vars": [
+      "warn",
+      {
+        "argsIgnorePattern": "^_",
+        "varsIgnorePattern": "^_",
+      }
+    ],
+    "typescript/no-empty-interface": "warn",
+    "typescript/no-inferrable-types": "off",
+    "typescript/prefer-as-const": "warn",
+    "typescript/no-non-null-assertion": "off",
+    "typescript/no-var-requires": "off",
+    "react/jsx-key": "warn",
+    "react/jsx-no-duplicate-props": "error",
+    "react/jsx-no-undef": "error",
+    "react/no-children-prop": "warn",
+    "react/no-danger-with-children": "error",
+    "react/no-direct-mutation-state": "error",
+    "react/no-find-dom-node": "warn",
+    "react/no-is-mounted": "error".
+    "react/no-render-return-value": "erron",
+    "react/no-string-refs": "warn",
+    "react/no-unescaped-entities": "warn",
+    "react/no-unknown-property": "warn",
+    "react/require-render-return": "erron",
+    "react/rules-of-hooks": "erron",
+    "react/exhaustive-deps": "off",
+    "react/set-state-in-effect": "off",
+    "import/named": "off",
+    "import/namespace": "off",
+    "import/default": "off",
+    "import/export": "warn",
+    "import/no-named-as-default": "off",
+    "import/no-named-as-default-member": "off",
+    "import/no-duplicates": "warn".
+    "import/first": "warn",
+    "nextjs/no-html-link-for-pages": "off",
+    "nextjs/no-img-element": "off",
+    "nextjs/no-page-custom-font": "off",
+    "settings": {
+      "jsx-ally": {
+        "polymorphicPropName": null,
+        "components": {}
+      },
+      "next": {
+        "rootDir": []
+      },
+      "react": {
+        "formComponents": [],
+        "linkComponents": []
+      },
+      "jsdoc": {
+        "ignorePrivate": false,
+        "ignoreInternal": false,
+        "ignoreReplacesDocs": true,
+        "overrideReplacesDocs": true,
+        "augmentsExtendsReplacesDocs": false,
+        "implementsReplacesDocs": false,
+        "exemptDestructuredRootsFromChecks": false,
+        "tagNamePreference": {}
+      },
+    }
   },
   "env": {
-    "node": true
-  }
+    "node": true,
+    "builtin": true,
+    "browser": true,
+  },
+  "globals": {
+    "React": "readonly",
+    "NodeJS": "readonly"
+  },
+  "ignorePatterns": [
+    "**/node_modules/**",
+    "**/dist/**",
+    "**/.nest/**",
+    "**/out/**",
+    "**/build/**",
+    "**/coverage/**",
+    "**/*.d.ts",
+    "**/nest-env.d.ts",
+  ]
 }

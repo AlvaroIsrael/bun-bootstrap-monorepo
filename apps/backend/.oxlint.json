@@ -1,0 +1,32 @@
+{
+  "$schema": "./node_modules/oxlint/configuration_schema.json",
+  "extends": [
+    "../../.oxlintrc.json"
+  ],
+  "plugins": [
+    "typescript"
+  ],
+  "env": {
+    "node": true,
+  },
+  "rules": {
+    "nextjs/no-assign-modules-variable": "off",
+    "typescript/no-explicit-any": "warn",
+    "typescript/ban-ts-comment": "off",
+    "typescript/explicit-function-return-type": "off",
+    "typescript/explicit-module-boundary-types": "off",
+    "typescript/no-unused-vars": [
+      "warn",
+      {
+        "argsIgnorePattern": "^_",
+        "varsIgnorePattern": "^_"
+      }
+    ],
+  },
+  "ignorePatterns": [
+    "mnode_modules/**",
+    "dist/**",
+    "coverage/**",
+    "*.d.ts"
+  ]
+}
