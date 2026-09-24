@@ -1,17 +1,11 @@
 {
-  "$schema": "./node_modules/oxlint/configuration_schema.json",
-  "extends": [
-    "../../.oxlintrc.json"
-  ],
-  "plugins": [
-    "typescript",
-    "react",
-    "nextjs"
-  ],
+  "$schema": "../../node_modules/oxlint/configuration_schema.json",
+  "extends": ["../../.oxlintrc.json"],
+  "plugins": ["typescript", "react", "nextjs"],
   "env": {
     "node": true,
     "builtin": true,
-    "browser": true,
+    "browser": true
   },
   "rules": {
     "typescript/no-explicit-any": "warn",
@@ -24,15 +18,7 @@
     ],
     "react/exhaustive-deps": "off",
     "nextjs/no-img-element": "off",
-    "nextjs/no-page-custom-font": "off",
+    "nextjs/no-page-custom-font": "off"
   },
-  "ignorePatterns": [
-    "mnode_modules/**",
-    ".nest/**",
-    "out/**",
-    "build/**",
-    "*.d.ts",
-    "next-env.d.ts"
-  ]
+  "ignorePatterns": ["mnode_modules/**", ".nest/**", "out/**", "build/**", "*.d.ts", "next-env.d.ts"]
 }
-

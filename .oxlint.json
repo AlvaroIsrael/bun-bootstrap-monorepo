@@ -1,20 +1,13 @@
 {
   "$schema": "./node_modules/oxlint/configuration_schema.json",
-  "plugins": [
-    "react",
-    "unicorn",
-    "typescript",
-    "import",
-    "nextjs",
-    "oxc"
-  ],
+  "plugins": ["react", "unicorn", "typescript", "import", "nextjs", "oxc"],
   "categories": {},
   "rules": {
     "no-unused-vars": [
       "warn",
       {
-        "argsIgnorePatter": "^_",
-        "varsIgnorePatter": "^_",
+        "argsIgnorePattern": "^_",
+        "varsIgnorePattern": "^_",
         "caughtErrorsIgnorePattern": "^_"
       }
     ],
@@ -53,7 +46,7 @@
       "warn",
       {
         "argsIgnorePattern": "^_",
-        "varsIgnorePattern": "^_",
+        "varsIgnorePattern": "^_"
       }
     ],
     "typescript/no-empty-interface": "warn",
@@ -68,13 +61,13 @@
     "react/no-danger-with-children": "error",
     "react/no-direct-mutation-state": "error",
     "react/no-find-dom-node": "warn",
-    "react/no-is-mounted": "error".
-    "react/no-render-return-value": "erron",
+    "react/no-is-mounted": "error",
+    "react/no-render-return-value": "error",
     "react/no-string-refs": "warn",
     "react/no-unescaped-entities": "warn",
     "react/no-unknown-property": "warn",
-    "react/require-render-return": "erron",
-    "react/rules-of-hooks": "erron",
+    "react/require-render-return": "error",
+    "react/rules-of-hooks": "error",
     "react/exhaustive-deps": "off",
     "react/set-state-in-effect": "off",
     "import/named": "off",
@@ -83,39 +76,35 @@
     "import/export": "warn",
     "import/no-named-as-default": "off",
     "import/no-named-as-default-member": "off",
-    "import/no-duplicates": "warn".
+    "import/no-duplicates": "warn",
     "import/first": "warn",
     "nextjs/no-html-link-for-pages": "off",
     "nextjs/no-img-element": "off",
-    "nextjs/no-page-custom-font": "off",
-    "settings": {
-      "jsx-ally": {
-        "polymorphicPropName": null,
-        "components": {}
-      },
-      "next": {
-        "rootDir": []
-      },
-      "react": {
-        "formComponents": [],
-        "linkComponents": []
-      },
-      "jsdoc": {
-        "ignorePrivate": false,
-        "ignoreInternal": false,
-        "ignoreReplacesDocs": true,
-        "overrideReplacesDocs": true,
-        "augmentsExtendsReplacesDocs": false,
-        "implementsReplacesDocs": false,
-        "exemptDestructuredRootsFromChecks": false,
-        "tagNamePreference": {}
-      },
+    "nextjs/no-page-custom-font": "off"
+  },
+  "settings": {
+    "next": {
+      "rootDir": []
+    },
+    "react": {
+      "formComponents": [],
+      "linkComponents": []
+    },
+    "jsdoc": {
+      "ignorePrivate": false,
+      "ignoreInternal": false,
+      "ignoreReplacesDocs": true,
+      "overrideReplacesDocs": true,
+      "augmentsExtendsReplacesDocs": false,
+      "implementsReplacesDocs": false,
+      "exemptDestructuredRootsFromChecks": false,
+      "tagNamePreference": {}
     }
   },
   "env": {
     "node": true,
     "builtin": true,
-    "browser": true,
+    "browser": true
   },
   "globals": {
     "React": "readonly",
@@ -129,6 +118,6 @@
     "**/build/**",
     "**/coverage/**",
     "**/*.d.ts",
-    "**/nest-env.d.ts",
+    "**/nest-env.d.ts"
   ]
 }
