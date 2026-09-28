@@ -15,7 +15,7 @@
     "test:cov": "bun test --coverage",
     "format": "bunx oxfmt apps/",
     "lint": "bunx oxlint apps/",
-    "libraryUpdate": "bun update --interactive"
+    "libraryUpdate": "(cd apps/backend && bun update --interactive) && (cd apps/frontend && bun update --interactive)"
   },
   "devDependencies": {
     "@types/bun": "latest",
